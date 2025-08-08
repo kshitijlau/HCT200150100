@@ -1,80 +1,12 @@
-
+# app.py
 import streamlit as st
 import google.generativeai as genai
 import pandas as pd
 import json
 import io
-from prompt import DEFINITIVE_PROMPT
 
-# --- Page Configuration ---
-st.set_page_config(
-    page_title="AI Assessment Summary Generator",
-    page_icon="✍️",
-    layout="wide"
-)
-
-# --- App State Management ---
-if 'processed_data' not in st.session_state:
-    st.session_state.processed_data = None
-
-# --- Helper Functions ---
-
-def create_sample_excel():
-    """Creates an in-memory sample Excel file for users to download."""
-    sample_data = {
-        'Name': ['Jane Doe', 'John Smith'],
-        'Gender': ['She/Her', 'He/Him'],
-        'Level': ['Apply', 'Shape'],
-        'Overall Leadership': [4.1, 2.8],
-        'Reasoning & Problem Solving': [3.5, 3.1],
-        'Drives Results': [4.5, 2.5],
-        'Develops Talent': [3.9, 3.2],
-        'Manages Stakeholders': [4.2, 2.9],
-        'Thinks Strategically': [3.8, 3.4],
-        'Solves Challenges': [4.0, 3.8],
-        'Steers Change': [3.7, 2.7]
-    }
-    df = pd.DataFrame(sample_data)
-    
-    # Use BytesIO to create an in-memory buffer for the Excel file
-    output = io.BytesIO()
-    with pd.ExcelWriter(output, engine='openpyxl') as writer:
-        df.to_excel(writer, index=False, sheet_name='Candidates')
-    processed_data = output.getvalue()
-    return processed_data
-
-def generate_summaries_for_candidate(row, model):
-    """Constructs the prompt and calls the Gemini API for a single candidate."""
-    try:
-        # Construct the dynamic part of the prompt for the current candidate
-        task_prompt = f"""
-<task>
-Analyze the following candidate data. Based on all the rules, context, and exemplars provided, generate a personalized assessment summary.
-
-**Candidate Data:**
-* **Name:** {row['Name']}
-* **Gender (for pronouns):** {row['Gender']}
-* **Level:** {row['Level']}
-* **Scores:**
-    * Overall Leadership: {row['Overall Leadership']}
-    * Reasoning & Problem Solving: {row['Reasoning & Problem Solving']}
-    * Drives Results: {row['Drives Results']}
-    * Develops Talent: {row['Develops Talent']}
-    * Manages Stakeholders: {row['Manages Stakeholders']}
-    * Thinks Strategically: {row['Thinks Strategically']}
-    * Solves Challenges: {row['Solves Challenges']}
-    * Steers Change: {row['Steers Change']}
-
-Your final output must be a single, raw JSON object with three keys: "summary_200", "summary_150", and "summary_100". The value for each key will be the complete summary (paragraph and bullet points) at that approximate word count. Do not include any other text, explanation, or markdown formatting like ```json outside of this JSON object.
-</task>
-"""
-        
-        # The DEFINITIVE_PROMPT already contains the <task>...</task> structure as a template.
-        # We find and replace it with our dynamically generated task_prompt.
-        # This is a robust way to ensure the static parts of the prompt are not accidentally modified.
-        final_prompt = 
-            """
-
+# --- Definitive Prompt ---
+# The entire prompt engineering logic is stored in this multi-line string.
 DEFINITIVE_PROMPT = """
 # PROMPT: Generate Expert Candidate Assessment Summary
 
@@ -319,20 +251,100 @@ Analyze the following candidate data. Based on all the rules, context, and exemp
 
 Your final output must be a single, raw JSON object with three keys: "summary_200", "summary_150", and "summary_100". The value for each key will be the complete summary (paragraph and bullet points) at that approximate word count. Do not include any other text, explanation, or markdown formatting like ```json outside of this JSON object.
 </task>
-"""""",
+"""
+
+# --- Page Configuration ---
+st.set_page_config(
+    page_title="AI Assessment Summary Generator",
+    page_icon="✍️",
+    layout="wide"
+)
+
+# --- App State Management ---
+if 'processed_data' not in st.session_state:
+    st.session_state.processed_data = None
+
+# --- Helper Functions ---
+
+def create_sample_excel():
+    """Creates an in-memory sample Excel file for users to download."""
+    sample_data = {
+        'Name': ['Jane Doe', 'John Smith'],
+        'Gender': ['She/Her', 'He/Him'],
+        'Level': ['Apply', 'Shape'],
+        'Overall Leadership': [4.1, 2.8],
+        'Reasoning & Problem Solving': [3.5, 3.1],
+        'Drives Results': [4.5, 2.5],
+        'Develops Talent': [3.9, 3.2],
+        'Manages Stakeholders': [4.2, 2.9],
+        'Thinks Strategically': [3.8, 3.4],
+        'Solves Challenges': [4.0, 3.8],
+        'Steers Change': [3.7, 2.7]
+    }
+    df = pd.DataFrame(sample_data)
+    
+    output = io.BytesIO()
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
+        df.to_excel(writer, index=False, sheet_name='Candidates')
+    processed_data = output.getvalue()
+    return processed_data
+
+def generate_summaries_for_candidate(row, model):
+    """Constructs the prompt and calls the Gemini API for a single candidate."""
+    try:
+        task_prompt = f"""
+<task>
+Analyze the following candidate data. Based on all the rules, context, and exemplars provided, generate a personalized assessment summary.
+
+**Candidate Data:**
+* **Name:** {row['Name']}
+* **Gender (for pronouns):** {row['Gender']}
+* **Level:** {row['Level']}
+* **Scores:**
+    * Overall Leadership: {row['Overall Leadership']}
+    * Reasoning & Problem Solving: {row['Reasoning & Problem Solving']}
+    * Drives Results: {row['Drives Results']}
+    * Develops Talent: {row['Develops Talent']}
+    * Manages Stakeholders: {row['Manages Stakeholders']}
+    * Thinks Strategically: {row['Thinks Strategically']}
+    * Solves Challenges: {row['Solves Challenges']}
+    * Steers Change: {row['Steers Change']}
+
+Your final output must be a single, raw JSON object with three keys: "summary_200", "summary_150", and "summary_100". The value for each key will be the complete summary (paragraph and bullet points) at that approximate word count. Do not include any other text, explanation, or markdown formatting like ```json outside of this JSON object.
+</task>
+"""
+        
+        final_prompt = DEFINITIVE_PROMPT.replace(
+            """<task>
+Analyze the following candidate data. Based on all the rules, context, and exemplars provided, generate a personalized assessment summary.
+
+**Candidate Data:**
+* **Name:** [Candidate Name]
+* **Gender (for pronouns):** [He/Him, She/Her, They/Them]
+* **Level:** [Apply/Shape/Guide]
+* **Scores:**
+    * Overall Leadership: [Score]
+    * Reasoning & Problem Solving: [Score]
+    * Drives Results: [Score]
+    * Develops Talent: [Score]
+    * Manages Stakeholders: [Score]
+    * Thinks Strategically: [Score]
+    * Solves Challenges: [Score]
+    * Steers Change: [Score]
+
+Your final output must be a single, raw JSON object with three keys: "summary_200", "summary_150", and "summary_100". The value for each key will be the complete summary (paragraph and bullet points) at that approximate word count. Do not include any other text, explanation, or markdown formatting like ```json outside of this JSON object.
+</task>""",
             task_prompt
         )
 
         response = model.generate_content(final_prompt)
         
-        # Clean the response to ensure it's valid JSON before parsing
         cleaned_response = response.text.strip().lstrip("```json").rstrip("```").strip()
         
         summaries = json.loads(cleaned_response)
         return summaries.get('summary_200', 'Error'), summaries.get('summary_150', 'Error'), summaries.get('summary_100', 'Error')
 
     except Exception as e:
-        # Provide a more detailed error message for debugging
         error_message = f"Failed to process {row.get('Name', 'Unknown Candidate')}. Error: {str(e)}. Raw Response: {response.text if 'response' in locals() else 'N/A'}"
         st.warning(error_message)
         return "Error", "Error", "Error"
@@ -340,14 +352,14 @@ Your final output must be a single, raw JSON object with three keys: "summary_20
 # --- Main App UI ---
 
 st.title("✍️ AI Assessment Summary Generator")
-st.markdown("This application uses Gemini 1.5 Pro to transform quantitative assessment scores into professional, narrative summaries. Upload your candidate data below to begin.")
+st.markdown("This application uses **Gemini 1.5 Pro** to transform quantitative assessment scores into professional, narrative summaries. Upload your candidate data below to begin.")
 
 # --- API Key Configuration ---
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-2.5-pro')
-    st.sidebar.success("API Key loaded successfully from secrets!")
+    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    st.sidebar.success("API Key loaded successfully!", icon="✅")
 except Exception as e:
     st.error("🚨 Google API Key not found or invalid in secrets.toml. Please ensure it is set up correctly for deployment.")
     st.stop()
@@ -356,10 +368,10 @@ except Exception as e:
 with st.sidebar:
     st.header("Instructions")
     st.markdown("""
-    1.  **Prepare Your Data**: Ensure your Excel file has the exact column headers as the sample.
-    2.  **Upload**: Use the uploader below to select your Excel file.
-    3.  **Generate**: Click the 'Generate Summaries' button.
-    4.  **Download**: Once processing is complete, a download button will appear for your results.
+    1.  **Prepare Your Data**: Use the template to ensure your Excel file has the correct columns.
+    2.  **Upload**: Drag and drop or browse for your Excel file.
+    3.  **Generate**: Click the 'Generate All Summaries' button.
+    4.  **Download**: Once processing is complete, your results will appear with a download button.
     """)
     
     st.header("Download Template")
@@ -379,12 +391,11 @@ if uploaded_file:
         df = pd.read_excel(uploaded_file)
         st.info(f"File '{uploaded_file.name}' uploaded successfully. Found {len(df)} candidates.")
         
-        # Display the uploaded data for verification
         with st.expander("View Uploaded Data"):
             st.dataframe(df)
 
         if st.button("🚀 Generate All Summaries", type="primary"):
-            st.session_state.processed_data = None # Reset previous results
+            st.session_state.processed_data = None
             progress_bar = st.progress(0, text="Initializing...")
             
             results_list = []
@@ -394,18 +405,15 @@ if uploaded_file:
                 progress_text = f"Processing candidate {index + 1}/{total_rows}: {row['Name']}..."
                 progress_bar.progress((index + 1) / total_rows, text=progress_text)
                 
-                # Call the generation function for the current row
                 summaries = generate_summaries_for_candidate(row, model)
                 results_list.append(summaries)
             
-            progress_bar.empty() # Clear the progress bar
+            progress_bar.empty()
             
-            # Create a DataFrame from the results
             results_df = pd.DataFrame(results_list, columns=['Summary (200 words)', 'Summary (150 words)', 'Summary (100 words)'])
             
-            # Concatenate the original DataFrame with the results
             final_df = pd.concat([df, results_df], axis=1)
-            st.session_state.processed_data = final_df # Save to session state
+            st.session_state.processed_data = final_df
             
             st.balloons()
             st.success("🎉 All summaries generated successfully!")
@@ -418,7 +426,6 @@ if st.session_state.processed_data is not None:
     st.header("Generated Summaries")
     st.dataframe(st.session_state.processed_data)
     
-    # Create an in-memory Excel file from the final DataFrame for downloading
     output_excel = io.BytesIO()
     with pd.ExcelWriter(output_excel, engine='openpyxl') as writer:
         st.session_state.processed_data.to_excel(writer, index=False, sheet_name='Generated_Summaries')
