@@ -352,13 +352,13 @@ Your final output must be a single, raw JSON object with three keys: "summary_20
 # --- Main App UI ---
 
 st.title("✍️ AI Assessment Summary Generator")
-st.markdown("This application uses **Gemini 1.5 Pro** to transform quantitative assessment scores into professional, narrative summaries. Upload your candidate data below to begin.")
+st.markdown("This application uses **Gemini 2.5 Pro** to transform quantitative assessment scores into professional, narrative summaries. Upload your candidate data below to begin.")
 
 # --- API Key Configuration ---
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    model = genai.GenerativeModel('gemini-2.5-pro')
     st.sidebar.success("API Key loaded successfully!", icon="✅")
 except Exception as e:
     st.error("🚨 Google API Key not found or invalid in secrets.toml. Please ensure it is set up correctly for deployment.")
