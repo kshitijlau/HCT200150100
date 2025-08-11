@@ -23,7 +23,7 @@ This report summarizes a candidate's performance on a leadership assessment. The
     * Reasoning & Problem Solving
 * **Level-Specific Group (Forms the main body of the summary):**
     * Drives Results
-    * Develops Talent
+    * Leads People
     * Manages Stakeholders
     * Thinks Strategically
     * Solves Challenges
@@ -56,7 +56,7 @@ Use the text corresponding to the candidate's assigned Level: APPLY, SHAPE, or G
     * *High (3.5-5.00):* "Consistently demonstrates high motivation and initiative to exceed expectations. A strong drive to achieve goals, targets, and results. Seeks fulfillment through impact. High focus on achieving outcomes against set targets and delivers consistent performance to exceed own goals. Shows perseverance and determination to achieve tasks and goals despite challenges."
     * *Moderate (2.5-3.49):* "Demonstrates motivation and takes initiative occasionally. Demonstrates a drive to achieve goals, but may need support. Interest in making an impact is present but not sustained. Moderate focus on outcomes and performance tracking; may occasionally lack focus. Shows perseverance to achieve tasks but may require support in overcoming setbacks or challenges."
     * *Low (1.00-2.49):* "Demonstrates limited motivation or initiative; may meet expectations but does not show a consistent drive to exceed them. Fulfillment from work or desire to make an impact is not clearly evident. Low focus on outcomes; may not track performance against goals consistently. There may be a lack of perseverance and problem-solving when faced with setbacks."
-* **Competency: Develops Talent**
+* **Competency: Leads People**
     * *High (3.5-5.00):* "Consistently takes time to focus on both personal and professional growth - for both self and others. Actively pursues continuous improvement and excellence; shows clear willingness to learn and unlearn. Strong ability to resolve problems with team members proactively and achieve common goals. Makes contributions on a continual basis, creates trust and teamwork."
     * *Moderate (2.5-3.49):* "Focuses on personal and professional growth and engages in learning activities but may not do so consistently. Moderate openness to learning and unlearning. Cooperates with team members in most situations but may need guidance to work through conflicts. Makes contributions intermittently and may not always address conflicts when they arise."
     * *Low (1.00-2.49):* "Rarely focuses on personal or professional growth. Engagement in learning is limited and may resist feedback or change. Seldom works collaboratively with team members. Rarely contributes meaningfully and may avoid resolving conflicts, often leaving issues unaddressed."
@@ -84,7 +84,7 @@ Use the text corresponding to the candidate's assigned Level: APPLY, SHAPE, or G
     * *High (3.5-5.00):* "Consistently demonstrates high motivation and initiative to exceed expectations. A strong drive to achieve goals, targets, and results. Seeks fulfillment through impact. Drives a high-performance culture across teams and demonstrates grit and persistence when working toward ambitious targets."
     * *Moderate (2.5-3.49):* "Demonstrates motivation and takes initiative occasionally. Demonstrates a drive to achieve goals, but may need support. Interest in making an impact is present but not sustained. Moderate ability to articulate performance standards that contribute to achieving organisational goals. Occasionally supports performance across teams and shows persistence when working towards goals."
     * *Low (1.00-2.49):* "Demonstrates limited motivation or initiative; may meet expectations but does not show a consistent drive to exceed them. Fulfillment from work or desire to make an impact is not clearly evident. Low ability to articulate performance standards that support organisational goals. Needs development in fostering a high-performance culture and in maintaining persistence when faced with challenging goals."
-* **Competency: Develops Talent**
+* **Competency: Leads People**
     * *High (3.5-5.00):* "Consistently takes time to focus on both personal and professional growth - for both self and others. Actively pursues continuous improvement and excellence; shows clear willingness to learn and unlearn. Strongly supports development of others by identifying and leveraging individual strengths. Advocates for learning and career growth, contributing to a culture of learning and continuous improvement."
     * *Moderate (2.5-3.49):* "Focuses on personal and professional growth for self and others and engages in learning activities but may not do so consistently. Displays willingness to learn and unlearn. Recognizes others’ development needs and offers support, though may not consistently nurture growth or advocate for talent advancement."
     * *Low (1.00-2.49):* "Rarely focuses on personal or professional growth- for both self and others. Engagement in learning is limited and may resist feedback or change. Shows minimal interest in developing others or contributing to a learning environment. May neglect or avoid growth conversations."
@@ -112,7 +112,7 @@ Use the text corresponding to the candidate's assigned Level: APPLY, SHAPE, or G
     * *High (3.5-5.00):* "Consistently demonstrates high motivation and initiative to exceed expectations. A strong drive to achieve goals, targets, and results. Seeks fulfillment through impact. Supports and guides team to deliver goals on time. Recognizes high performance, addresses underperformance, displays grit, and manages resources effectively."
     * *Moderate (2.5-3.49):* "Demonstrates motivation and takes initiative occasionally. Demonstrates a drive to achieve goals, but may need support. Interest in making an impact is present but not sustained. Supports team delivery but may need prompting. Occasionally recognizes performance and addresses underperformance. Shows some grit and manages resources with support."
     * *Low (1.00-2.49):* "Demonstrates limited motivation or initiative; may meet expectations but does not show a consistent drive to exceed them. Fulfillment from work or desire to make an impact is not clearly evident. Limited support for team delivery. Rarely recognizes performance or addresses underperformance. Struggles with grit and resource management."
-* **Competency: Develops Talent**
+* **Competency: Leads People**
     * *High (3.5-5.00):* "Consistently takes time to focus on both personal and professional growth - for both self and others. Actively pursues continuous improvement and excellence; shows clear willingness to learn and unlearn. Coaches key talent with timely, constructive feedback. Builds capability by offering challenging development opportunities."
     * *Moderate (2.5-3.49):* "Focuses on personal and professional growth for self and others and engages in learning activities but may not do so consistently. Displays willingness to learn and unlearn. Provides feedback and guidance, though not always timely or targeted. Offers some development opportunities, but impact may vary."
     * *Low (1.00-2.49):* "Rarely focuses on personal or professional growth- for both self and others. Engagement in learning is limited and may resist feedback or change. Rarely provides meaningful feedback or development. Struggles to coach talent or build individual capability."
@@ -134,7 +134,7 @@ Use the text corresponding to the candidate's assigned Level: APPLY, SHAPE, or G
     * *Low (1.00-2.49):* "Struggles with change or uncertainty. May resist new ways of working and has difficulty adapting or deciding in changing circumstances. Rarely acts as a role model for change and struggles to inspire or define clear actions in the change journey."
 
 **PART C: SUMMARY STRUCTURE AND EXECUTION**
-1.  **Opening Sentence:** Your summary MUST begin with the exact sentence from the 'Overall Leadership' interpretation text (Part A) that corresponds to the candidate's score. Add the candidate's first name to the beginning.
+1.  **Opening Sentence:** Your summary MUST begin with the exact sentence from the 'Overall Leadership' interpretation text (Part A) that corresponds to the candidate's score. Add the candidate's first name to the beginning. The sentence should exactly be based on the score there in cometency: Overall Leadership ther  should be no deviation from this rule.
 2.  **Main Body Paragraph:** Following the opening, describe the 6 'Level-Specific Group' competencies by internally sorting their scores in descending order and weaving their corresponding interpretation texts from Part B into a natural paragraph, mirroring the style of the exemplars. DO NOT name the competencies.
 3.  **Bullet Points:** Provide two strengths and two development areas based on the highest and lowest scores. The bullet points MUST NOT repeat sentences from the main summary. They must be complementary, behavioral statements derived from the interpretation text, as shown in the exemplars.
 
@@ -152,7 +152,7 @@ Here are four golden standard examples. Study them carefully to understand the e
     * Overall Leadership: 4
     * Reasoning & Problem Solving: 4
     * Drives Results: 4
-    * Develops Talent: 3
+    * Leads People: 3
     * Manages Stakeholder: 4
     * Thinks Strategically: 4
     * Solves Challenges: 5
@@ -174,7 +174,7 @@ Here are four golden standard examples. Study them carefully to understand the e
     * Overall Leadership: 3
     * Reasoning & Problem Solving: 3
     * Drives Results: 2
-    * Develops Talent: 2
+    * Leads People: 2
     * Manages Stakeholder: 3
     * Thinks Strategically: 3
     * Solves Challenges: 3
@@ -196,7 +196,7 @@ Here are four golden standard examples. Study them carefully to understand the e
     * Overall Leadership: 2.97
     * Reasoning & Problem Solving: 3
     * Drives Results: 2.97
-    * Develops Talent: 3.15
+    * Leads People: 3.15
     * Manages Stakeholder: 2.92
     * Thinks Strategically: 3.38
     * Solves Challenges: 3.92
@@ -218,7 +218,7 @@ Here are four golden standard examples. Study them carefully to understand the e
     * Overall Leadership: 2.55
     * Reasoning & Problem Solving: 3
     * Drives Results: 2.22
-    * Develops Talent: 2.55
+    * Leads People: 2.55
     * Manages Stakeholder: 2.36
     * Thinks Strategically: 2.47
     * Solves Challenges: 5
@@ -243,7 +243,7 @@ Analyze the following candidate data. Based on all the rules, context, and exemp
     * Overall Leadership: [Score]
     * Reasoning & Problem Solving: [Score]
     * Drives Results: [Score]
-    * Develops Talent: [Score]
+    * Leads People: [Score]
     * Manages Stakeholders: [Score]
     * Thinks Strategically: [Score]
     * Solves Challenges: [Score]
@@ -275,7 +275,7 @@ def create_sample_excel():
         'Overall Leadership': [4.1, 2.8],
         'Reasoning & Problem Solving': [3.5, 3.1],
         'Drives Results': [4.5, 2.5],
-        'Develops Talent': [3.9, 3.2],
+        'Leads People': [3.9, 3.2],
         'Manages Stakeholders': [4.2, 2.9],
         'Thinks Strategically': [3.8, 3.4],
         'Solves Challenges': [4.0, 3.8],
@@ -304,7 +304,7 @@ Analyze the following candidate data. Based on all the rules, context, and exemp
     * Overall Leadership: {row['Overall Leadership']}
     * Reasoning & Problem Solving: {row['Reasoning & Problem Solving']}
     * Drives Results: {row['Drives Results']}
-    * Develops Talent: {row['Develops Talent']}
+    * Leads People: {row['Leads People']}
     * Manages Stakeholders: {row['Manages Stakeholders']}
     * Thinks Strategically: {row['Thinks Strategically']}
     * Solves Challenges: {row['Solves Challenges']}
@@ -326,7 +326,7 @@ Analyze the following candidate data. Based on all the rules, context, and exemp
     * Overall Leadership: [Score]
     * Reasoning & Problem Solving: [Score]
     * Drives Results: [Score]
-    * Develops Talent: [Score]
+    * Leads People: [Score]
     * Manages Stakeholders: [Score]
     * Thinks Strategically: [Score]
     * Solves Challenges: [Score]
