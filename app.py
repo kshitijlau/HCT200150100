@@ -135,6 +135,11 @@ Use the text corresponding to the candidate's assigned Level: APPLY, SHAPE, or G
 
 **PART C: SUMMARY STRUCTURE AND EXECUTION**
 1.  **Opening Sentence:** Your summary MUST begin with the exact sentence from the 'Overall Leadership' interpretation text (Part A) that corresponds to the candidate's score. Add the candidate's first name to the beginning. The sentence should exactly be based on the score there in cometency: Overall Leadership ther  should be no deviation from this rule.
+* **Competency: Overall Leadership** absoulute rules for opening sentence
+    * *High (3.5-5.00):* "Demonstrates high potential for growth and success in a more complex role."
+    * *Moderate-High (3.0-3.49):* "Candidate demonstrates above average potential for growth and success in a more complex role."
+    * *Moderate-Low (2.5-2.99):* "Candidate demonstrates average potential for growth and success in a more complex role."
+    * *Low (1.00-2.49):* "Candidate demonstrates low potential for growth and success in a more complex role."
 2.  **Main Body Paragraph:** Following the opening, describe the 6 'Level-Specific Group' competencies by internally sorting their scores in descending order and weaving their corresponding interpretation texts from Part B into a natural paragraph, mirroring the style of the exemplars. DO NOT name the competencies.
 3.  **Bullet Points:** Provide two strengths and two development areas based on the highest and lowest scores. The bullet points MUST NOT repeat sentences from the main summary. They must be complementary, behavioral statements derived from the interpretation text, as shown in the exemplars.
 
